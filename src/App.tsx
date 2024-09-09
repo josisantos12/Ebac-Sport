@@ -5,6 +5,7 @@ import {store} from'./store'
 
 import { GlobalStyle } from './styles'
 import { Provider } from 'react-redux'
+import React from 'react'
 
 export type Produto = {
   id: number
@@ -40,9 +41,9 @@ function App() {
         <Header  />
         <Produtos
           produtos={produtos}
-          favoritos={favoritos}
-          favoritar={favoritar}
-        />
+          favoritos={favoritos} favoritar={function (produto: Produto): void {
+            throw new Error('Function not implemented.')
+          } }        />
       </div>
     </Provider>
   )

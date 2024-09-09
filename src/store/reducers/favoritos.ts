@@ -17,7 +17,7 @@ const FavoritosSlice = createSlice({
       state.itens.push(action.payload);
     },
     removerFavorito(state, action: PayloadAction<Produto>) {
-      state.itens = state.itens.filter((item) => item !== action.payload);
+      state.itens = state.itens.filter((item) => item.id !== action.payload.id);
     },
   },
 });
